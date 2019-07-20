@@ -35,5 +35,6 @@ const negationStyle = {
     fontWeight: 'bold'
 };
 const positiveStyle = {
-    color: 'green'
+    color: 'green',
+    fontWeight: 'normal'
 };

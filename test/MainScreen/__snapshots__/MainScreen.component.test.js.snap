@@ -18,11 +18,19 @@ exports[`MainScreen #render should render the component according to the snapsho
         }
       }
     >
-      <Text
-        accessibilityLabel="counter"
-      >
-        Hello
-      </Text>
+      <View>
+        <Text
+          style={
+            Object {
+              "color": "green",
+              "fontSize": 30,
+              "fontWeight": "normal",
+            }
+          }
+        >
+          0
+        </Text>
+      </View>
     </View>
     <View
       style={
@@ -37,7 +45,7 @@ exports[`MainScreen #render should render the component according to the snapsho
         accessibilityRole="button"
         accessibilityStates={Array []}
         accessible={true}
-        clickable={false}
+        clickable={true}
         isTVSelectable={true}
         onClick={[Function]}
         onResponderGrant={[Function]}
@@ -67,9 +75,6 @@ exports[`MainScreen #render should render the component according to the snapsho
                   "fontSize": 18,
                   "padding": 8,
                   "textAlign": "center",
-                },
-                Object {
-                  "color": "#ff927b",
                 },
               ]
             }
@@ -82,7 +87,7 @@ exports[`MainScreen #render should render the component according to the snapsho
         accessibilityRole="button"
         accessibilityStates={Array []}
         accessible={true}
-        clickable={false}
+        clickable={true}
         isTVSelectable={true}
         onClick={[Function]}
         onResponderGrant={[Function]}
@@ -114,7 +119,7 @@ exports[`MainScreen #render should render the component according to the snapsho
                   "textAlign": "center",
                 },
                 Object {
-                  "color": "#ff927b",
+                  "color": "#ff0000",
                 },
               ]
             }

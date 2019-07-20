@@ -1,70 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#counterColor manual should turn the color to green if have negation value 1`] = `
-<View>
-  <Text
-    style={
-      Array [
-        Object {
-          "fontSize": 30,
-          "fontWeight": "bold",
-        },
-        Object {
-          "color": "green",
-        },
-      ]
-    }
-  >
-    2
-  </Text>
-</View>
-`;
-
-exports[`#counterColor manual should turn the color to red if have negation value 1`] = `
-<View>
-  <Text
-    style={
-      Array [
-        Object {
-          "fontSize": 30,
-          "fontWeight": "bold",
-        },
-        Object {
-          "color": "red",
-        },
-      ]
-    }
-  >
-    -1
-  </Text>
-</View>
-`;
-
-exports[`#counterColor snapshot should turn the color from red to green if have negation value 1`] = `
-Object {
-  "color": "green",
-  "fontSize": 30,
-  "fontWeight": "bold",
-}
-`;
-
-exports[`#counterColor snapshot should turn the color to green if have negation value 1`] = `
-<View>
-  <Text
-    style={
-      Object {
-        "color": "green",
-        "fontSize": 30,
-        "fontWeight": "bold",
-      }
-    }
-  >
-    2
-  </Text>
-</View>
-`;
-
-exports[`#counterColor snapshot should turn the color to red if have negation value 1`] = `
+exports[`#counterColor snapshot should match negation value 1`] = `
 <View>
   <Text
     style={
@@ -78,4 +14,36 @@ exports[`#counterColor snapshot should turn the color to red if have negation va
     -1
   </Text>
 </View>
+`;
+
+exports[`#counterColor snapshot should match positive value 1`] = `
+<View>
+  <Text
+    style={
+      Object {
+        "color": "green",
+        "fontSize": 30,
+        "fontWeight": "normal",
+      }
+    }
+  >
+    2
+  </Text>
+</View>
+`;
+
+exports[`#counterColor snapshot should turn the color from red to green if change state value 1`] = `
+Object {
+  "color": "red",
+  "fontSize": 30,
+  "fontWeight": "bold",
+}
+`;
+
+exports[`#counterColor snapshot should turn the color from red to green if change state value 2`] = `
+Object {
+  "color": "green",
+  "fontSize": 30,
+  "fontWeight": "normal",
+}
 `;

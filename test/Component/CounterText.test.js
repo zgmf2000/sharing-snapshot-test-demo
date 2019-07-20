@@ -20,12 +20,15 @@ describe('#counterColor', () => {
             expect(wrapper.toJSON()).toMatchSnapshot();
         });
 
-        it('should turn the color from red to green if have negation value', () => {
+        it('should turn the color from red to green if change state value', () => {
             const wrapper = shallow(<CounterText count={-2}/>);
+            let actualColor = wrapper.find('Text').props().style;
+
+            expect(actualColor).toMatchSnapshot();
             wrapper.setProps({
                 count: 3
             });
-            const actualColor = wrapper.find('Text').props().style;
+            actualColor = wrapper.find('Text').props().style;
             expect(actualColor).toMatchSnapshot();
         });
     });
@@ -44,7 +47,7 @@ describe('#counterColor', () => {
                 expect(actualColor).toEqual('red');
             });
 
-            it('should turn the color from red to green if have negation value', () => {
+            it('should turn the color from red to green if changed state value', () => {
                 const wrapper = shallow(<CounterText count={-1}/>);
                 let actualColor = wrapper.find('Text').props().style.color;
 
@@ -72,7 +75,7 @@ describe('#counterColor', () => {
                 expect(actualColor).toEqual('bold');
             });
 
-            it('should turn the fontWeight to normal if changed positive value', () => {
+            it('should turn the fontWeight to normal if changed state value', () => {
                 const wrapper = shallow(<CounterText count={-1}/>);
                 let actualColor = wrapper.find('Text').props().style.fontWeight;
                 expect(actualColor).toEqual('bold');
