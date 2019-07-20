@@ -10,12 +10,12 @@ configure({adapter: new Adapter()});
 
 describe('#counterColor', () => {
     describe('snapshot', () => {
-        it('should turn the color to red if have negation value', () => {
+        it('should match negation value', () => {
             const wrapper = renderer.create(<CounterText count={-1}/>);
             expect(wrapper.toJSON()).toMatchSnapshot();
         });
 
-        it('should turn the color to green if have negation value', () => {
+        it('should match positive value', () => {
             const wrapper = renderer.create(<CounterText count={2}/>);
             expect(wrapper.toJSON()).toMatchSnapshot();
         });
@@ -32,47 +32,55 @@ describe('#counterColor', () => {
 
     describe('manual', () => {
         describe('color', () => {
-            it('should turn the color to red if have negation value', () => {
+            it('should green if have negation value', () => {
                 const wrapper = shallow(<CounterText count={2}/>);
                 const actualColor = wrapper.find('Text').props().style.color;
                 expect(actualColor).toEqual('green');
             });
 
-            it('should turn the color to green if have negation value', () => {
+            it('should red if have negation value', () => {
                 const wrapper = shallow(<CounterText count={-1}/>);
                 const actualColor = wrapper.find('Text').props().style.color;
                 expect(actualColor).toEqual('red');
             });
 
-            it('should turn the color from to green if have negation value', () => {
+            it('should turn the color from red to green if have negation value', () => {
                 const wrapper = shallow(<CounterText count={-1}/>);
+                let actualColor = wrapper.find('Text').props().style.color;
+
+                expect(actualColor).toEqual('red');
+
                 wrapper.setProps({
                     count: 2
                 });
-                const actualColor = wrapper.find('Text').props().style.color;
+
+                actualColor = wrapper.find('Text').props().style.color;
                 expect(actualColor).toEqual('green');
             });
         });
 
         describe('fontWeight', () => {
-            it('should turn the fontWeight to normal have positive value', () => {
+            it('should normal if positive value', () => {
                 const wrapper = shallow(<CounterText count={2}/>);
                 const actualColor = wrapper.find('Text').props().style.fontWeight;
                 expect(actualColor).toEqual('normal');
             });
 
-            it('should turn the fontWeight to bold have negation value', () => {
+            it('should bold if negation value', () => {
                 const wrapper = shallow(<CounterText count={-1}/>);
                 const actualColor = wrapper.find('Text').props().style.fontWeight;
                 expect(actualColor).toEqual('bold');
             });
 
-            it('should turn the fontWeight to normal have positive value', () => {
+            it('should turn the fontWeight to normal if changed positive value', () => {
                 const wrapper = shallow(<CounterText count={-1}/>);
+                let actualColor = wrapper.find('Text').props().style.fontWeight;
+                expect(actualColor).toEqual('bold');
+
                 wrapper.setProps({
                     count: 2
                 });
-                const actualColor = wrapper.find('Text').props().style.fontWeight;
+                actualColor = wrapper.find('Text').props().style.fontWeight;
                 expect(actualColor).toEqual('normal');
             });
         });
