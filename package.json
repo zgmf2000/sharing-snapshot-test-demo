@@ -14,7 +14,7 @@
     "flow-bin": "^0.103.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-native": "0.60.4"
+    "react-native": "0.62.3"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
